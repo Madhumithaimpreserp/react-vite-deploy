@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Coimbatore Mobile Shop"
+description = "A polished mobile storefront for browsing smartphones, comparing popular models, discovering local deals, and shopping with Coimbatore delivery support."
+version = "1.0.0"
+id = "artifacts/coimbatore-mobile-shop"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21798
+
+[services.development]
+run = "pnpm --filter @workspace/coimbatore-mobile-shop run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/coimbatore-mobile-shop", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/coimbatore-mobile-shop/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21798"
+BASE_PATH = "/"
