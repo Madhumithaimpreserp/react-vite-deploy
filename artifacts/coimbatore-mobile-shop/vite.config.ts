@@ -15,9 +15,9 @@ if (Number.isNaN(port) || port <= 0) {
 const basePath = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
-  base: basePath,
+  base: process.env.VITE_BASE_PATH || "/react-vite-website",
   plugins: [
-    react(),
+    react(), 
     tailwindcss(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== 'production' &&
@@ -34,6 +34,7 @@ export default defineConfig({
         ]
       : []),
   ],
+  
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, 'src'),
@@ -69,10 +70,6 @@ export default defineConfig({
     port,
     host: '0.0.0.0',
     allowedHosts: true,
-    watch: {
-      usePolling: true,
-      interval: 1000,
-      binaryInterval: 1000,
-    },
   },
+  
 });
