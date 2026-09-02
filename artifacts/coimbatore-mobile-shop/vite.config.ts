@@ -15,7 +15,7 @@ if (Number.isNaN(port) || port <= 0) {
 const basePath = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
-  base: basePath,
+  base: process.env.VITE_BASE_PATH || "/react-vite-deploy",
   plugins: [
     react(), 
     tailwindcss(),
