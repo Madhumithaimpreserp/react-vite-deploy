@@ -98,6 +98,7 @@ const navItems = [
   ['home', 'Home'],
   ['range', 'Our range'],
   ['services', 'Services'],
+  [ 'reviews', 'Reviews'],
   ['story', 'Our story'],
   ['visit', 'Visit us'],
  ] as const;
@@ -343,8 +344,137 @@ function Home({ activeTab, onTabChange }: { activeTab: TabId; onTabChange: TabCh
             </div>
           </div>
         </section>}
+        {activeTab === 'reviews' && (
+  <section className="section reviews-section" id="reviews">
+    <div className="container-wide">
 
-        {activeTab === 'story' && <section className="section" id="story">
+      <div className="section-heading reveal-on-scroll">
+        <div>
+          <span className="eyebrow">What our customers say</span>
+          <h2>Good phones. Even better experiences.</h2>
+        </div>
+
+        <p>
+          Real conversations, honest advice, and happy customers
+          from Universal Mobiles, Coimbatore.
+        </p>
+      </div>
+
+      <div className="reviews-summary reveal-on-scroll">
+        <div className="reviews-rating">
+          <strong>5.0</strong>
+          <div>
+            <div className="review-stars">★★★★★</div>
+            <span>Customer rating</span>
+          </div>
+        </div>
+
+        <div className="reviews-summary-text">
+          <strong>Trusted by our customers</strong>
+          <p>
+            We believe the best review is a customer who comes back
+            or recommends us to a friend.
+          </p>
+        </div>
+      </div>
+
+      <div className="reviews-grid">
+
+        <article className="review-card reveal-on-scroll">
+          <div className="review-card-top">
+            <div className="review-avatar">R</div>
+            <div>
+              <h3>Natarajan C</h3>
+              <span>Coimbatore</span>
+            </div>
+            <div className="review-stars">★★★★★</div>
+          </div>
+
+          <p>
+            "Very helpful team. They explained the differences between
+            the phones clearly and helped me choose the right one."
+          </p>
+
+          <small>Verified customer</small>
+        </article>
+
+        <article className="review-card reveal-on-scroll">
+          <div className="review-card-top">
+            <div className="review-avatar">P</div>
+            <div>
+              <h3>Priya</h3>
+              <span>Coimbatore</span>
+            </div>
+            <div className="review-stars">★★★★★</div>
+          </div>
+
+          <p>
+            "I liked the way they gave honest advice without pushing
+            the most expensive phone. Great experience."
+          </p>
+
+          <small>Verified customer</small>
+        </article>
+
+        <article className="review-card reveal-on-scroll">
+          <div className="review-card-top">
+            <div className="review-avatar">S</div>
+            <div>
+              <h3>Suresh</h3>
+              <span>Coimbatore</span>
+            </div>
+            <div className="review-stars">★★★★★</div>
+          </div>
+
+          <p>
+            "Bought my phone here and the setup was very smooth.
+            The staff were friendly and patient."
+          </p>
+
+          <small>Verified customer</small>
+        </article>
+
+        <article className="review-card reveal-on-scroll">
+          <div className="review-card-top">
+            <div className="review-avatar">A</div>
+            <div>
+              <h3>Anitha</h3>
+              <span>Coimbatore</span>
+            </div>
+            <div className="review-stars">★★★★★</div>
+          </div>
+
+          <p>
+            "Excellent service and a good collection of phones.
+            They helped me compare everything before buying."
+          </p>
+
+          <small>Verified customer</small>
+        </article>
+
+         </div>
+
+      <div className="reviews-bottom reveal-on-scroll">
+        <strong>Your experience matters to us.</strong>
+        <p>
+          Thank you for choosing Universal Mobiles.
+        </p>
+
+        <a
+          href="https://www.google.com/search?q=Universal+Mobiles+Coimbatore"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-primary"
+        >
+          Leave a review
+          <ArrowRight size={15} />
+        </a>
+      </div>
+
+    </div>
+  </section>
+)}
+ {activeTab === 'story' && <section className="section" id="story">
           <div className="container-wide story-grid">
              <div className="reveal-on-scroll"><span className="eyebrow">A little local context</span><h2>We know the difference between a spec and a need.</h2><p>Universal Mobiles began in Coimbatore in 2012 with a simple idea: choosing a phone should feel more like good advice from a neighbour than a negotiation.</p><p>Today, we keep the range considered and the advice human. We test the cameras, know which batteries last through a full day, and tell you when the simpler option is genuinely the better one.</p><div className="story-note">No commission targets. No confusing jargon. Just a good recommendation.</div></div>
              <div className="story-panel reveal-on-scroll" style={{ '--reveal-delay': '130ms' } as CSSProperties}><div className="story-panel-top"><span className="eyebrow" style={{ color: 'hsl(var(--secondary))' }}>Our promise</span><Heart size={21} /></div><h3>No pressure is a feature.</h3><p>“If you leave with the right phone for you — even if it is not the most expensive one on our shelf — we have done our job.”</p><div className="story-signoff"><span className="story-avatar">U</span><span>From the Universal Mobiles team<br /><small>Coimbatore, always</small></span></div></div>
