@@ -256,6 +256,7 @@ html { scroll-behavior: smooth; }
   .container-wide { width:min(100% - 28px, 1180px); }.topline-inner { min-height:30px; font-size:.64rem; }.topline-inner span:last-child { display:none; }.header-inner { min-height:65px; gap:9px; }.brand-name { font-size:1rem; }.brand-mark { width:33px; height:33px;}.header.nav {
     display: none;  
   }
+  
 
   /* Show navigation when hamburger is opened */
   .header .nav.mobile-nav {
@@ -330,11 +331,11 @@ html { scroll-behavior: smooth; }
 
   .hero-copy {
     font-size: .9rem;
-  }.nav {
+  }}.nav {
   display: flex;
   gap: 10px;
   align-items: center;
-}}.search-box { flex:1; min-width:0; height:36px; }.search-box input { font-size:.72rem; }.icon-btn { width:35px; height:35px; }.hero { padding:44px 0 55px; }.hero h1 { font-size:clamp(1.9rem,15vw,4rem); }.hero-copy { font-size:.9rem; }.hero-notes { flex-wrap:wrap; gap:11px 18px; margin-top:28px; }.hero-art { min-height:360px; margin-top:10px; }.hero-art::before { width:300px; height:300px; }
+}.search-box { flex:1; min-width:0; height:36px; }.search-box input { font-size:.72rem; }.icon-btn { width:35px; height:35px; }.hero { padding:44px 0 55px; }.hero h1 { font-size:clamp(1.9rem,15vw,4rem); }.hero-copy { font-size:.9rem; }.hero-notes { flex-wrap:wrap; gap:11px 18px; margin-top:28px; }.hero-art { min-height:360px; margin-top:10px; }.hero-art::before { width:300px; height:300px; }
   .hero-real-phone {
     width: 210px;
     max-height: 400px;
