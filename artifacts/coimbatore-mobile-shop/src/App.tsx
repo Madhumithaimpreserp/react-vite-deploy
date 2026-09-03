@@ -119,8 +119,12 @@ function Header({ activeTab, onTabChange }: { activeTab: TabId; onTabChange: Tab
       <header className="header">
         <div className="container-wide header-inner">
           <button className="brand brand-button" onClick={() => chooseTab('home')} data-testid="link-brand">
-            <span className="brand-mark"><Smartphone size={20} /></span>
-            <span><span className="brand-name">Universal <span style={{ color: 'hsl(var(--accent-foreground))' }}>Mobiles</span></span><span className="brand-sub">Coimbatore · Est. 2012</span></span>
+           
+           <img
+            src="/react-vite-deploy/phones/universal-logo.jpeg"
+             className="universal-logo"
+            />
+         <span><span className="brand-name">Universal Mobiles <span style={{ color: 'hsl(var(--accent-foreground))' }}></span></span><span className="brand-sub" style={{ color: 'hsl(42 20% 70%)' }}>Good phones. Good people.</span></span>
           </button>
           <nav className={menuOpen ? 'nav mobile-nav' : 'nav'} aria-label="Primary navigation" role="tablist">
             {navItems.map(([id, label]) => (
@@ -147,8 +151,11 @@ function Footer({ onTabChange }: { onTabChange: TabChange }) {
       <div className="container-wide footer-grid">
         <div>
           <button className="brand brand-button" onClick={() => onTabChange('home')} data-testid="link-footer-brand">
-            <span className="brand-mark"><Smartphone size={19} /></span>
-            <span><span className="brand-name">Universal <span style={{ color: 'hsl(var(--accent-foreground))' }}>Mobiles</span></span><span className="brand-sub" style={{ color: 'hsl(42 20% 70%)' }}>Good phones. Good people.</span></span>
+            <img
+            src="/react-vite-deploy/phones/universal-logo.jpeg"
+            className="universal-logo"
+            />
+            <span><span className="brand-name">Universal Mobiles <span style={{ color: 'hsl(var(--accent-foreground))' }}></span></span><span className="brand-sub" style={{ color: 'hsl(42 20% 70%)' }}>Good phones. Good people.</span></span>
           </button>
           <p>Good phones, clear advice, and a familiar face in Coimbatore whenever you need help.</p>
         </div>

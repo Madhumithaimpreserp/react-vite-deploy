@@ -633,3 +633,21 @@ html { scroll-behavior: smooth; }
     transform: rotate(360deg) translateX(220px);
   }
 }
+
+.brand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.universal-logo {
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
