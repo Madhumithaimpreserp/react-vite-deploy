@@ -121,7 +121,7 @@ function Header({ activeTab, onTabChange }: { activeTab: TabId; onTabChange: Tab
           <button className="brand brand-button" onClick={() => chooseTab('home')} data-testid="link-brand">
            
            <img
-            src="/react-vite-deploy/phones/universal-logo.jpeg"
+            src={resolveAssetUrl('phones/universal-logo.jpeg')}
              className="universal-logo"
             />
          <span><span className="brand-name">Universal Mobiles <span style={{ color: 'hsl(var(--accent-foreground))' }}></span></span><span className="brand-sub" style={{ color: 'hsl(42 20% 70%)' }}>Good phones. Good people.</span></span>
@@ -152,7 +152,7 @@ function Footer({ onTabChange }: { onTabChange: TabChange }) {
         <div>
           <button className="brand brand-button" onClick={() => onTabChange('home')} data-testid="link-footer-brand">
             <img
-            src="/react-vite-deploy/phones/universal-logo.jpeg"
+            src={resolveAssetUrl('phones/universal-logo.jpeg')}
             className="universal-logo"
             />
             <span><span className="brand-name">Universal Mobiles <span style={{ color: 'hsl(var(--accent-foreground))' }}></span></span><span className="brand-sub" style={{ color: 'hsl(42 20% 70%)' }}>Good phones. Good people.</span></span>
