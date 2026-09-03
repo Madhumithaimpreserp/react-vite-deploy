@@ -66,15 +66,10 @@ export default defineConfig({
       strict: true,
     },
   },
-  preview: {
+   preview: {
     port,
     host: '0.0.0.0',
     allowedHosts: true,
-    watch: {
-      usePolling: true,
-      interval: 1000,
-      binaryInterval: 1000,
-    },
   },
   
 });

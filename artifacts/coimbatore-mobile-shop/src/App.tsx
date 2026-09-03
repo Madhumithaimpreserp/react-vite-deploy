@@ -33,6 +33,14 @@ type Product = {
   image: string;
 };
 
+const resolveAssetUrl = (filePath: string) => {
+  const basePath = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+
+  return `${basePath}${filePath.replace(/^\/+/, '')}`;
+};
+
 const products: Product[] = [
   {
     brand: 'Google',
@@ -41,27 +49,26 @@ const products: Product[] = [
     description: 'A seriously clever camera and a clean Android experience for everyday city life.',
     tags: ['Best camera', 'Clean Android'],
     wash: '#e7e2ff',
-    image: '/phones/pixel9a.png',
+    image: resolveAssetUrl('phones/pixel9a.png'),
   },
- {
+  {
     brand: 'Samsung',
     name: 'Galaxy S24 FE',
     badge: 'Flagship feel',
     description: 'A bright display, dependable cameras, and all-day performance in one neat package.',
     tags: ['AMOLED', 'AI features'],
     wash: '#e1e6ff',
-    image: '/phones/galaxy-s24-fe.png',
+    image: resolveAssetUrl('phones/galaxy-s24-fe.png'),
   },
-{
+  {
     brand: 'OnePlus',
     name: '13R',
     badge: 'Fast seller',
     description: 'Big battery, bold screen, and the kind of speed that feels new every time.',
     tags: ['Big battery', '120 Hz display'],
     wash: '#f7dfd6',
-    image: '/phones/oneplus-13r.png',
+    image: resolveAssetUrl('phones/oneplus-13r.png'),
   },
-
   {
     brand: 'Nothing',
     name: 'Phone (3a)',
@@ -69,7 +76,7 @@ const products: Product[] = [
     description: 'Distinctive by design and easy to love — a smooth everyday phone with character.',
     tags: ['Glyph design', 'Everyday hero'],
     wash: '#dff0e8',
-    image: '/phones/nothing-phone-3a.png',
+    image: resolveAssetUrl('phones/nothing-phone-3a.png'),
   },
 ];
 
