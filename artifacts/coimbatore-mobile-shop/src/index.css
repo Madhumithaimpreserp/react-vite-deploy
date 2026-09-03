@@ -253,50 +253,58 @@ html { scroll-behavior: smooth; }
   .hero-grid, .detail-layout, .about-grid, .contact-grid { grid-template-columns:1fr; gap:35px; }.hero-art { min-height:420px; }.hero { padding-top:50px; }.product-grid { grid-template-columns:repeat(2,1fr); }.footer-grid { grid-template-columns:repeat(2,1fr); }.nav { gap:13px; }.search-box { min-width:150px; }.shop-layout { grid-template-columns:180px 1fr; }.detail-visual { min-height:450px; }
 }
 @media (max-width: 640px) {
-  .container-wide { width:min(100% - 28px, 1180px); }.topline-inner { min-height:30px; font-size:.64rem; }.topline-inner span:last-child { display:none; }.header-inner { min-height:65px; gap:9px; }.brand-name { font-size:1rem; }.brand-mark { width:33px; height:33px;}.header.nav {
-    display: none;  
-  }
-  
+  .container-wide { width:min(100% - 28px, 1180px); }.topline-inner { min-height:30px; font-size:.64rem; }.topline-inner span:last-child { display:none; }.header-inner { min-height:65px; gap:9px; }.brand-name { font-size:1rem; }.brand-mark { width:33px; height:33px;}
+  .header .nav:not(.mobile-nav) {
+    display: none;
+}
 
   /* Show navigation when hamburger is opened */
-  .header .nav.mobile-nav {
-    display: flex;
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    top: calc(100% + 8px);
+  .nav.mobile-nav {
+  display: flex;
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: calc(100% + 8px);
 
-    flex-direction: column;
-    align-items: stretch;
-    gap: 5px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 
-    padding: 8px;
-    margin: 0;
+  padding: 8px;
+  margin: 0;
 
-    border: 1px solid hsl(var(--border));
-    border-radius: 14px;
-    background: hsl(var(--card));
-    box-shadow: var(--shadow-float);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 
-    z-index: 2000;
-  }
+  border: 1px solid hsl(var(--border));
+  border-radius: 14px;
+
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-float);
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
 
   .header .mobile-nav .nav-link {
-    width: 100%;
-    min-height: 44px;
+  width: auto;
+  min-width: max-content;
+  min-height: 38px;
 
-    display: flex;
-    align-items: center;
+  flex: 0 0 auto;
 
-    padding: 12px 15px;
-    border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    text-align: left;
-    font-size: .78rem;
+  padding: 9px 12px;
 
-    white-space: nowrap;
-  }
+  white-space: nowrap;
+  text-align: center;
 
+  font-size: .78rem;
+}
   .header .mobile-nav .nav-link.active {
     transform: none;
     box-shadow: none;
@@ -908,14 +916,13 @@ html { scroll-behavior: smooth; }
     display: none;
   }
 }
-
 @media (max-width: 640px) {
 
-  /* Tab container */
-  .nav.mobile-nav {
-    display: flex;
-    flex-direction: row;
+  .header .nav.mobile-nav {
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
+
     gap: 8px;
 
     overflow-x: auto;
@@ -923,55 +930,46 @@ html { scroll-behavior: smooth; }
 
     white-space: nowrap;
 
-    left: 14px;
-    right: 14px;
-
-    padding: 8px;
-
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
 
-  .nav.mobile-nav::-webkit-scrollbar {
+  .header .nav.mobile-nav::-webkit-scrollbar {
     display: none;
   }
 
-  /* Individual tabs */
-  .nav.mobile-nav .nav-link {
-    flex: 0 0 auto;
+  .header .nav.mobile-nav .nav-link {
+    flex: 0 0 auto !important;
 
-    width: auto;
+    width: auto !important;
+    min-width: max-content;
+
     min-height: 38px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    padding: 8px 14px;
+    padding: 9px 12px !important;
 
     border-radius: 999px;
 
-    font-size: .72rem;
-
     white-space: nowrap;
+    text-align: center;
+
+    font-size: .75rem;
 
     background: hsl(var(--primary));
     color: white;
-
-    transform: none;
   }
 
-  /* Active tab */
-  .nav.mobile-nav .nav-link.active {
+  .header .nav.mobile-nav .nav-link.active {
     background: hsl(var(--primary));
     color: white;
 
-    transform: none;
-    box-shadow: none;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
-  /* Remove desktop underline */
-  .nav.mobile-nav .nav-link::after {
-    display: none;
-  }
 }
